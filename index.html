@@ -62,23 +62,26 @@
         }
 
         .arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
+            display: block; /* Garante que o botão de seta fique visível */
+            width: 40px; /* Largura das setas */
+            height: 40px; /* Altura das setas */
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
             color: white;
             border: none;
-            padding: 10px;
             cursor: pointer;
-            z-index: 10;
+            font-size: 24px; /* Tamanho do ícone da seta */
+            border-radius: 5px; /* Bordas arredondadas */
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%); /* Centraliza verticalmente */
         }
 
-        .left {
-            left: 10px;
+        .arrow.left {
+            left: 10px; /* Posiciona a seta da esquerda */
         }
 
-        .right {
-            right: 10px;
+        .arrow.right {
+            right: 10px; /* Posiciona a seta da direita */
         }
 
         .contact {
@@ -225,63 +228,31 @@
         }
 
         .lightbox .arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            z-index: 10;
+            display: block; /* Para garantir que as setas apareçam na lightbox */
         }
 
-        .lightbox .left {
-            left: 10px;
-        }
-
-        .lightbox .right {
-            right: 10px;
-        }
-
-        @media (max-width: 768px) {
-            /* Ajustes para dispositivos móveis */
-            .lightbox-content {
-                max-width: 100%;
-                max-height: 70vh; /* Ajusta para telas menores */
-            }
-
-            .arrow {
-                padding: 5px; /* Reduz o tamanho das setas em dispositivos menores */
-            }
-        }
     </style>
 </head>
 <body>
 
 <header>
-    <img id="JBR" src="JBRMETALLOGO.png" alt="LOGOTYPE">
-    <nav>
-        <a href="#about">Sobre nós</a>
-        <a href="#gallery">Galeria</a>
-        <a href="#contact">Contato</a>
-    </nav>
+    <img src="logo.png" alt="Logo da JBR Metais">
+    JBR Metais
 </header>
 
+<nav>
+    <a href="#about">Sobre nós</a>
+    <a href="#gallery">Galeria</a>
+    <a href="#contact">Contato</a>
+</nav>
+
 <section id="about" class="about">
-    <h2>Fundada em 2012, nossa empresa se especializou em serralheria, caldeiraria e montagem industrial, consolidando-se ao longo dos anos como referência no setor. Desde o início, temos buscado aprimorar nossas habilidades e conhecimentos, realizando diversos cursos de especialização no SENAI, focando em traçado de caldeiraria, mecânica e soldagem ao arco elétrico. Nossa jornada começou sob a orientação de nossos tios, empreendedores experientes na mesma área, onde adquirimos as bases fundamentais para nos tornarmos profissionais competentes. Com 12 anos de atuação no mercado, acumulamos uma vasta experiência, que inclui a montagem e desmontagem de usinas açucareiras, tanques de combustíveis e ácidos, além da criação de estruturas metálicas como coberturas, guarda-corpos, mezaninos e bases para reatores e tanques.</h2>
+    <h2>Sobre nós</h2>
+    <p>A JBR Metais é uma empresa dedicada à...</p> <!-- Adicione seu conteúdo aqui -->
 </section>
 
-<!-- Lightbox Container -->
-<div id="lightbox" class="lightbox">
-    <span class="close" id="closeLightbox">&times;</span>
-    <img class="lightbox-content" id="lightboxImage" alt="Imagem ampliada">
-    <button class="arrow left" id="prevLightbox">&lt;</button>
-    <button class="arrow right" id="nextLightbox">&gt;</button>
-</div>
-
 <section id="gallery" class="gallery-container">
-    <h2>Galeria de Produtos</h2>
+    <h2>Galeria</h2>
     <div class="gallery" id="galleryImages">
         <img src="foto1.jpg" alt="Produto 1" onclick="openLightbox(0)">
         <img src="foto2.jpg" alt="Produto 2" onclick="openLightbox(1)">
@@ -298,6 +269,13 @@
         <button class="whatsapp-button">Fale conosco pelo WhatsApp</button>
     </a>
 </section>
+
+<div class="lightbox" id="lightbox">
+    <span class="close" id="closeLightbox">&times;</span>
+    <img id="lightboxImage" class="lightbox-content" src="" alt="Lightbox Image">
+    <button class="arrow left" id="prevLightbox">←</button>
+    <button class="arrow right" id="nextLightbox">→</button>
+</div>
 
 <script>
     const images = [
