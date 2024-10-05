@@ -5,235 +5,269 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JBR Metais</title>
     <style>
-        /* Box sizing */
-        * {
-            box-sizing: border-box; /* Inclui padding e borda na largura/altura total */
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0; /* Remove margens globais */
-            padding: 0; /* Remove paddings globais */
-            background-color: #7e7e7e;
-            overflow-x: hidden; /* Evita scroll horizontal */
-        }
-
-        header {
-            background-color: #3b3535;
-            color: white;
-            padding: 20px; /* Reduzido para melhor responsividade */
-            text-align: center;
-            font-size: 23px;
-            width: 100%;
-        }
-
-        header img {
-            height: 60px; 
-        }
-
-        nav {
-            margin: 10px 0; /* Reduzido para melhor responsividade */
-            text-align: center; /* Centraliza a barra de navegação */
-        }
-
-        nav a {
-            color: rgb(255, 255, 255);
-            margin: 0 15px;
-            text-decoration: none;
-        }
-
-        .gallery-container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: 20px auto;
-            overflow: hidden;
-            text-align: center; /* Centraliza o título "GALERIA" */
-        }
-
-        .gallery {
-            display: flex;
-            transition: transform 0.5s ease;
-            width: 100%;
-        }
-
-        .gallery img {
-            width: 100%;
-            object-fit: cover; 
-            border-radius: 8px;
-            margin: 3px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        .arrow {
-            display: flex; 
-            width: 40px; 
-            height: 40px; 
-            background-color: rgba(0, 0, 0, 0.5); 
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 24px; 
-            border-radius: 5px; 
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%); 
-        }
-
-        .arrow.left {
-            left: 10px; 
-        }
-
-        .arrow.right {
-            right: 10px; 
-        }
-
-        .contact {
-            text-align: center;
-            margin: 20px;
-        }
-
-        .whatsapp-button {
-            background-color: #25D366;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
-        }
-
-        .whatsapp-button:hover {
-            background-color: #1DAE55;
-        }
-
-        .about {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: 20px auto;
-            overflow: hidden;
-            font-size: 15px;
-            padding: 10px; 
-            text-align: center; /* Centraliza o título "Sobre nós" */
-        }
-
-        @media (max-width: 768px) {
-            .about h2 {
-                font-size: 18px;
-            }
-
-            header img {
-                height: 50px;
-            }
-
-            nav a {
-                font-size: 14px;
-            }
-
-            .whatsapp-button {
-                padding: 10px 20px;
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .about h2 {
-                font-size: 22px;
-            }
-
-            header img {
-                height: 90px;
-            }
-
-            .whatsapp-button {
-                padding: 8px 16px;
-                font-size: 12px;
-            }
-
-            nav a {
-                font-size: 12px;
-                margin: 0 10px;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            body {
-                font-size: 18px; 
-            }
-
-            header {
-                padding: 30px; 
-                font-size: 26px; 
-            }
-
-            
-
-            .about {
-                font-size: 22px; 
-                width: 80%; 
-                margin: 0 auto;
-            }
-
-            .gallery-container {
-                max-width: 1000px; 
-            }
-
-            .gallery img {
-                height: 300px;
-            }
-
-            .contact {
-                font-size: 20px; 
-            }
-        }
-
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 80vh; 
-            border-radius: 10px;
-            object-fit: contain; 
-        }
-
-        .lightbox .close {
-            position: absolute;
-            top: 20px;
-            right: 40px;
-            font-size: 40px;
-            color: white;
-            cursor: pointer;
-        }
-
-        .lightbox .arrow {
-            display: block; 
-        }
-
-        #email {
-    text-align: center; 
-    font-size: 18px; 
-    color: #333; 
-    margin: 10px 0; 
-}
-
-
+    /* Box sizing */
+    * {
+        box-sizing: border-box; /* Inclui padding e borda na largura/altura total */
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0; /* Remove margens globais */
+        padding: 0; /* Remove paddings globais */
+        background-color: #7e7e7e;
+        overflow-x: hidden; /* Evita scroll horizontal */
+    }
+    
+    header {
+        background-color: #3b3535;
+        color: white;
+        padding: 20px; /* Reduzido para melhor responsividade */
+        text-align: center;
+        font-size: 23px;
+        width: 100%;
+        transition: background-color 0.3s ease; /* Efeito ao passar o mouse */
+    }
+    
+    header img {
+        height: 80px; /* Aumenta o logo */
+        transition: transform 0.3s ease; /* Efeito de transformação */
+    }
+    
+    header:hover img {
+        transform: scale(1.1); /* Aumenta o logo ao passar o mouse */
+    }
+    
+    nav {
+        margin: 10px 0; /* Reduzido para melhor responsividade */
+        text-align: center; /* Centraliza a barra de navegação */
+    }
+    
+    nav a {
+        color: rgb(255, 255, 255);
+        margin: 0 15px;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden; /* Para o efeito de sublinhado */
+    }
+    
+    nav a::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -5px; /* Para que fique logo abaixo do texto */
+        width: 0;
+        height: 2px;
+        background-color: white;
+        transition: width 0.3s ease, left 0.3s ease; /* Efeito suave */
+    }
+    
+    nav a:hover::after {
+        width: 100%; /* Expandir o sublinhado */
+        left: 0; /* Move para a esquerda */
+    }
+    
+    .gallery-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+        overflow: hidden;
+        border-radius: 8px; /* Bordas arredondadas */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para a galeria */
+        text-align: center;
+    }
+    
+    .gallery {
+        display: flex;
+        transition: transform 0.5s ease;
+        width: 100%;
         
+    }
+    
+    .gallery img {
+        width: 100%;
+        object-fit: cover; 
+        border-radius: 8px;
+        margin: 3px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease; /* Efeito de transformação nas imagens */
+    }
+    
+    .gallery img:hover {
+        transform: scale(1.05); /* Efeito de zoom nas imagens */
+    }
+    
+    .arrow {
+        display: flex; 
+        width: 40px; 
+        height: 40px; 
+        background-color: rgba(0, 0, 0, 0.5); 
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 24px; 
+        border-radius: 5px; 
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%); 
+        transition: background-color 0.3s ease; /* Efeito de transição ao passar o mouse */
+    }
+    
+    .arrow:hover {
+        background-color: rgba(0, 0, 0, 0.7); /* Escurece ao passar o mouse */
+    }
+    
+    .arrow.left {
+        left: 10px; /* Posição da seta à esquerda */
+    }
+    
+    .arrow.right {
+        right: 10px; /* Posição da seta à direita */
+    }
+    
+    .contact {
+        text-align: center;
+        margin: 20px;
+    }
+    
+    .whatsapp-button {
+        background-color: #25D366;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        transition: background-color 0.3s ease; /* Efeito de transição */
+    }
+    
+    .whatsapp-button:hover {
+        background-color: #1DAE55;
+    }
+    
+    .about {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+        overflow: hidden;
+        font-size: 15px;
+        padding: 10px; 
+        text-align: center; /* Centraliza o texto */
+    }
+    
+    .about h2 {
+        margin: 20px 0; /* Margem para espaçamento */
+        text-align: center; /* Centraliza o título */
+        transition: color 0.3s ease; /* Efeito de transição na cor */
+    }
+    
+    .about h2:hover {
+        color: #1DAE55; /* Altera a cor ao passar o mouse */
+    }
+    
+    #email {
+        font-size: 18px; /* Aumenta o tamanho do texto do email */
+        margin: 10px 0; /* Espaçamento superior e inferior */
+        color: #fff; /* Cor do texto */
+    }
+    
+    @media (max-width: 768px) {
+        header img {
+            height: 50px;
+        }
+    
+        nav a {
+            font-size: 14px;
+        }
+    
+        .whatsapp-button {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        header img {
+            height: 90px;
+        }
+    
+        .whatsapp-button {
+            padding: 8px 16px;
+            font-size: 12px;
+        }
+    
+        nav a {
+            font-size: 12px;
+            margin: 0 10px;
+        }
+    }
+    
+    @media (min-width: 1024px) {
+        body {
+            font-size: 18px; 
+        }
+    
+        header {
+            padding: 30px; 
+            font-size: 26px; 
+        }
+    
+        .about {
+            font-size: 18px; 
+            width: 80%; 
+            margin: 0 auto;
+        }
+    
+        .gallery-container {
+            max-width: 1000px; 
+        }
+    
+        .gallery img {
+            height: 300px;
+        }
+    
+        .contact {
+            font-size: 20px; 
+        }
+    }
+    
+    /* Lightbox */
+    .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .lightbox-content {
+        max-width: 90%;
+        max-height: 80vh; 
+        border-radius: 10px;
+        object-fit: contain; 
+    }
+    
+    .lightbox .close {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+    }
+    
+    .lightbox .arrow {
+        display: block; 
+    }
+</style>    
 
-    </style>
 </head>
 <body>
 
