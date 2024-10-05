@@ -10,29 +10,24 @@
             margin: 0;
             padding: 0;
             background-color: #7e7e7e;
+            overflow-x: hidden; /* Evita scroll horizontal */
         }
 
         header {
             background-color: #3b3535;
             color: white;
-            padding: 60px;
+            padding: 20px; /* Reduzido para melhor responsividade */
             text-align: center;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             font-size: 23px;
-            position: relative;
             width: 100%;
         }
 
         header img {
-            position: absolute;
-            top: 10px;
-            left: 10px;
             height: 60px; 
         }
 
         nav {
-            margin: 20px 0;
-            
+            margin: 10px 0; /* Reduzido para melhor responsividade */
         }
 
         nav a {
@@ -52,7 +47,7 @@
         .gallery {
             display: flex;
             transition: transform 0.5s ease;
-            width: 100%; 
+            width: 100%;
         }
 
         .gallery img {
@@ -64,7 +59,7 @@
         }
 
         .arrow {
-            display: flex   ; 
+            display: flex; 
             width: 40px; 
             height: 40px; 
             background-color: rgba(0, 0, 0, 0.5); 
@@ -113,17 +108,14 @@
             margin: 20px auto;
             overflow: hidden;
             font-size: 15px;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             padding: 10px; 
         }
 
         @media (max-width: 768px) {
-            
             .about h2 {
                 font-size: 18px;
             }
 
-            
             header img {
                 height: 50px;
             }
@@ -139,28 +131,17 @@
         }
 
         @media (max-width: 480px) {
-           
             .about h2 {
                 font-size: 16px;
             }
 
-            .gallery img {
-                height: 150px; 
-            }
-
             header img {
                 height: 90px;
-                left: 30%;
             }
 
             .whatsapp-button {
                 padding: 8px 16px;
                 font-size: 12px;
-            }
-
-            
-            .gallery {
-                width: 100%;
             }
 
             nav a {
@@ -170,7 +151,6 @@
         }
 
         @media (min-width: 1024px) {
-            
             body {
                 font-size: 18px; 
             }
@@ -249,10 +229,7 @@
 
 <section id="about" class="about">
     <h2>Sobre nós</h2>
-    <p>Fundada em 2012, nossa empresa se especializou em serralheria, caldeiraria e montagem industrial, consolidando-se ao longo dos anos como referência no setor. Desde o início, temos buscado aprimorar nossas habilidades e conhecimentos, realizando diversos cursos de especialização no SENAI, focando em traçado de caldeiraria, mecânica e soldagem ao arco elétrico.
-
-        Nossa jornada começou sob a orientação de nossos tios, empreendedores experientes na mesma área, onde adquirimos as bases fundamentais para nos tornarmos profissionais competentes. Com 12 anos de atuação no mercado, acumulamos uma vasta experiência, que inclui a montagem e desmontagem de usinas açucareiras, tanques de combustíveis e ácidos, além da criação de estruturas metálicas como coberturas, guarda-corpos, mezaninos e bases para reatores e tanques.
-        </p> 
+    <p>Fundada em 2012, nossa empresa se especializou em serralheria, caldeiraria e montagem industrial, consolidando-se ao longo dos anos como referência no setor. Desde o início, temos buscado aprimorar nossas habilidades e conhecimentos, realizando diversos cursos de especialização no SENAI, focando em traçado de caldeiraria, mecânica e soldagem ao arco elétrico. Nossa jornada começou sob a orientação de nossos tios, empreendedores experientes na mesma área, onde adquirimos as bases fundamentais para nos tornarmos profissionais competentes. Com 12 anos de atuação no mercado, acumulamos uma vasta experiência, que inclui a montagem e desmontagem de usinas açucareiras, tanques de combustíveis e ácidos, além da criação de estruturas metálicas como coberturas, guarda-corpos, mezaninos e bases para reatores e tanques.</p> 
 </section>
 
 <section id="gallery" class="gallery-container">
@@ -293,41 +270,44 @@
 
     function openLightbox(index) {
         currentIndex = index;
-        const lightbox = document.getElementById("lightbox");
-        const lightboxImage = document.getElementById("lightboxImage");
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
         lightboxImage.src = images[currentIndex];
-        lightbox.style.display = "flex"; 
+        lightbox.style.display = 'flex';
     }
 
     function closeLightbox() {
-        const lightbox = document.getElementById("lightbox");
-        lightbox.style.display = "none";
+        document.getElementById('lightbox').style.display = 'none';
     }
 
     function showImage(index) {
-        currentIndex = (index + images.length) % images.length; 
-        const lightboxImage = document.getElementById("lightboxImage");
-        lightboxImage.src = images[currentIndex];
+        const lightboxImage = document.getElementById('lightboxImage');
+        lightboxImage.src = images[index];
     }
 
-    document.getElementById("closeLightbox").addEventListener("click", closeLightbox);
-    document.getElementById("prevLightbox").addEventListener("click", () => showImage(currentIndex - 1));
-    document.getElementById("nextLightbox").addEventListener("click", () => showImage(currentIndex + 1));
+    document.getElementById('closeLightbox').onclick = closeLightbox;
+    document.getElementById('prev').onclick = function() {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        showImage(currentIndex);
+    };
+    document.getElementById('next').onclick = function() {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        showImage(currentIndex);
+    };
+    document.getElementById('prevLightbox').onclick = function() {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        showImage(currentIndex);
+    };
+    document.getElementById('nextLightbox').onclick = function() {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        showImage(currentIndex);
+    };
 
-    document.querySelectorAll('.gallery img').forEach((img, index) => {
-        img.addEventListener('click', () => openLightbox(index));
-    });
-
-    let galleryIndex = 0;
-    document.getElementById("prev").addEventListener("click", () => {
-        galleryIndex = (galleryIndex - 1 + images.length) % images.length;
-        document.getElementById("galleryImages").style.transform = `translateX(-${galleryIndex * 100}%)`;
-    });
-
-    document.getElementById("next").addEventListener("click", () => {
-        galleryIndex = (galleryIndex + 1) % images.length;
-        document.getElementById("galleryImages").style.transform = `translateX(-${galleryIndex * 100}%)`;
-    });
+    window.onclick = function(event) {
+        if (event.target === document.getElementById('lightbox')) {
+            closeLightbox();
+        }
+    };
 </script>
 </body>
 </html>
