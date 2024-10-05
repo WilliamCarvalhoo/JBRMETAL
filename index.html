@@ -9,32 +9,34 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #7e7e7e;
         }
 
         header {
             background-color: #3b3535;
             color: white;
-            padding: 10px;
+            padding: 60px;
             text-align: center;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             font-size: 23px;
             position: relative;
+            width: 100%;
         }
 
         header img {
             position: absolute;
             top: 10px;
             left: 10px;
-            height: 60px; /* Altura ajustada do logo */
+            height: 60px; 
         }
 
         nav {
             margin: 20px 0;
+            
         }
 
         nav a {
-            color: white;
+            color: rgb(255, 255, 255);
             margin: 0 15px;
             text-decoration: none;
         }
@@ -50,7 +52,7 @@
         .gallery {
             display: flex;
             transition: transform 0.5s ease;
-            width: 100%; /* Ajuste para ocupar 100% da largura do container */
+            width: 100%; 
         }
 
         .gallery img {
@@ -62,26 +64,26 @@
         }
 
         .arrow {
-            display: block; /* Garante que o botão de seta fique visível */
-            width: 40px; /* Largura das setas */
-            height: 40px; /* Altura das setas */
-            background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+            display: flex   ; 
+            width: 40px; 
+            height: 40px; 
+            background-color: rgba(0, 0, 0, 0.5); 
             color: white;
             border: none;
             cursor: pointer;
-            font-size: 24px; /* Tamanho do ícone da seta */
-            border-radius: 5px; /* Bordas arredondadas */
+            font-size: 24px; 
+            border-radius: 5px; 
             position: absolute;
             top: 50%;
-            transform: translateY(-50%); /* Centraliza verticalmente */
+            transform: translateY(-50%); 
         }
 
         .arrow.left {
-            left: 10px; /* Posiciona a seta da esquerda */
+            left: 10px; 
         }
 
         .arrow.right {
-            right: 10px; /* Posiciona a seta da direita */
+            right: 10px; 
         }
 
         .contact {
@@ -116,12 +118,12 @@
         }
 
         @media (max-width: 768px) {
-            /* Ajuste no tamanho do texto na seção "Sobre nós" para dispositivos móveis */
+            
             .about h2 {
                 font-size: 18px;
             }
 
-            /* Ajustes no tamanho do logotipo em dispositivos móveis */
+            
             header img {
                 height: 50px;
             }
@@ -137,17 +139,18 @@
         }
 
         @media (max-width: 480px) {
-            /* Ajustes adicionais para telas menores */
+           
             .about h2 {
                 font-size: 16px;
             }
 
             .gallery img {
-                height: 150px; /* Ajuste de altura para imagens na galeria em dispositivos móveis */
+                height: 150px; 
             }
 
             header img {
-                height: 40px;
+                height: 90px;
+                left: 30%;
             }
 
             .whatsapp-button {
@@ -155,7 +158,7 @@
                 font-size: 12px;
             }
 
-            /* Garantir que os elementos ocupem toda a largura da tela em dispositivos menores */
+            
             .gallery {
                 width: 100%;
             }
@@ -167,32 +170,32 @@
         }
 
         @media (min-width: 1024px) {
-            /* Estilos específicos para computadores */
+            
             body {
-                font-size: 18px; /* Ajuste o tamanho da fonte para computadores */
+                font-size: 18px; 
             }
 
             header {
-                padding: 30px; /* Aumente o padding no header */
-                font-size: 26px; /* Aumente o tamanho da fonte no header */
+                padding: 30px; 
+                font-size: 26px; 
             }
 
             .about {
-                font-size: 18px; /* Aumente o tamanho do texto sobre nós em computadores */
-                width: 80%; /* Altere a largura da seção para computadores */
+                font-size: 18px; 
+                width: 80%; 
                 margin: 0 auto;
             }
 
             .gallery-container {
-                max-width: 1000px; /* Aumente o tamanho máximo da galeria em computadores */
+                max-width: 1000px; 
             }
 
             .gallery img {
-                height: 300px; /* Aumente a altura das imagens da galeria em computadores */
+                height: 300px;
             }
 
             .contact {
-                font-size: 20px; /* Aumente o tamanho da fonte na seção de contato */
+                font-size: 20px; 
             }
         }
 
@@ -208,14 +211,13 @@
             background-color: rgba(0, 0, 0, 0.8);
             justify-content: center;
             align-items: center;
-            padding: 20px; /* Adiciona espaço para as setas em telas pequenas */
         }
 
         .lightbox-content {
             max-width: 90%;
-            max-height: 80vh; /* Limita a altura da imagem em 80% da altura da tela */
+            max-height: 80vh; 
             border-radius: 10px;
-            object-fit: contain; /* Garante que a imagem não estoure o tamanho da tela */
+            object-fit: contain; 
         }
 
         .lightbox .close {
@@ -228,7 +230,7 @@
         }
 
         .lightbox .arrow {
-            display: block; /* Para garantir que as setas apareçam na lightbox */
+            display: block; 
         }
 
     </style>
@@ -237,7 +239,6 @@
 
 <header>
     <img src="JBRMETALLOGO.png" alt="Logo da JBR Metais">
-    JBR Metais
 </header>
 
 <nav>
@@ -251,7 +252,7 @@
     <p>Fundada em 2012, nossa empresa se especializou em serralheria, caldeiraria e montagem industrial, consolidando-se ao longo dos anos como referência no setor. Desde o início, temos buscado aprimorar nossas habilidades e conhecimentos, realizando diversos cursos de especialização no SENAI, focando em traçado de caldeiraria, mecânica e soldagem ao arco elétrico.
 
         Nossa jornada começou sob a orientação de nossos tios, empreendedores experientes na mesma área, onde adquirimos as bases fundamentais para nos tornarmos profissionais competentes. Com 12 anos de atuação no mercado, acumulamos uma vasta experiência, que inclui a montagem e desmontagem de usinas açucareiras, tanques de combustíveis e ácidos, além da criação de estruturas metálicas como coberturas, guarda-corpos, mezaninos e bases para reatores e tanques.
-        </p> <!-- Adicione seu conteúdo aqui -->
+        </p> 
 </section>
 
 <section id="gallery" class="gallery-container">
@@ -295,7 +296,7 @@
         const lightbox = document.getElementById("lightbox");
         const lightboxImage = document.getElementById("lightboxImage");
         lightboxImage.src = images[currentIndex];
-        lightbox.style.display = "flex"; // Muda para flex para centralizar a imagem
+        lightbox.style.display = "flex"; 
     }
 
     function closeLightbox() {
@@ -304,7 +305,7 @@
     }
 
     function showImage(index) {
-        currentIndex = (index + images.length) % images.length; // Garante que o índice seja circular
+        currentIndex = (index + images.length) % images.length; 
         const lightboxImage = document.getElementById("lightboxImage");
         lightboxImage.src = images[currentIndex];
     }
@@ -313,12 +314,10 @@
     document.getElementById("prevLightbox").addEventListener("click", () => showImage(currentIndex - 1));
     document.getElementById("nextLightbox").addEventListener("click", () => showImage(currentIndex + 1));
 
-    // Adicionando evento de clique para a galeria
     document.querySelectorAll('.gallery img').forEach((img, index) => {
         img.addEventListener('click', () => openLightbox(index));
     });
 
-    // Controle de navegação na galeria
     let galleryIndex = 0;
     document.getElementById("prev").addEventListener("click", () => {
         galleryIndex = (galleryIndex - 1 + images.length) % images.length;
