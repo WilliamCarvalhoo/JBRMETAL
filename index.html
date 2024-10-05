@@ -203,12 +203,14 @@
     background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
+    padding: 20px; /* Adiciona espaço para as setas em telas pequenas */
 }
 
 .lightbox-content {
     max-width: 90%;
-    max-height: 90%;
+    max-height: 80vh; /* Limita a altura da imagem em 80% da altura da tela */
     border-radius: 10px;
+    object-fit: contain; /* Garante que a imagem não estoure o tamanho da tela */
 }
 
 .lightbox .close {
@@ -238,6 +240,18 @@
 
 .lightbox .right {
     right: 10px;
+}
+
+@media (max-width: 768px) {
+    /* Ajustes para dispositivos móveis */
+    .lightbox-content {
+        max-width: 100%;
+        max-height: 70vh; /* Ajusta para telas menores */
+    }
+
+    .arrow {
+        padding: 5px; /* Reduz o tamanho das setas em dispositivos menores */
+    }
 }
 
 }
@@ -325,15 +339,28 @@ function openLightbox() {
     updateLightbox();
 }
 
+// Função para atualizar o conteúdo do lightbox com a imagem atual
 function updateLightbox() {
     const lightboxImage = document.getElementById("lightboxImage");
     lightboxImage.src = images[currentIndex].src;
 }
 
-// Função para fechar o lightbox
+// Fechar o lightbox ao clicar no botão "fechar" ou fora da imagem
 document.getElementById("closeLightbox").onclick = function() {
-    document.getElementById("lightbox").style.display = "none";
+    closeLightbox();
 };
+
+document.getElementById("lightbox").onclick = function(e) {
+    if (e.target !== document.getElementById("lightboxImage") && 
+        e.target !== document.getElementById("prevLightbox") && 
+        e.target !== document.getElementById("nextLightbox")) {
+        closeLightbox();
+    }
+};
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
 
 // Navegação entre as imagens no lightbox
 document.getElementById("nextLightbox").onclick = function() {
@@ -345,6 +372,7 @@ document.getElementById("prevLightbox").onclick = function() {
     currentIndex = (currentIndex - 1 + totalImages) % totalImages;
     updateLightbox();
 };
+
 
 </script>
 
