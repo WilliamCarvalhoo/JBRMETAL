@@ -33,6 +33,7 @@
 
         nav {
             margin: 10px 0; /* Reduzido para melhor responsividade */
+            text-align: center; /* Centraliza a barra de navegação */
         }
 
         nav a {
@@ -47,6 +48,7 @@
             max-width: 800px;
             margin: 20px auto;
             overflow: hidden;
+            text-align: center; /* Centraliza o título "GALERIA" */
         }
 
         .gallery {
@@ -114,6 +116,7 @@
             overflow: hidden;
             font-size: 15px;
             padding: 10px; 
+            text-align: center; /* Centraliza o título "Sobre nós" */
         }
 
         @media (max-width: 768px) {
@@ -137,7 +140,7 @@
 
         @media (max-width: 480px) {
             .about h2 {
-                font-size: 16px;
+                font-size: 22px;
             }
 
             header img {
@@ -165,8 +168,10 @@
                 font-size: 26px; 
             }
 
+            
+
             .about {
-                font-size: 18px; 
+                font-size: 22px; 
                 width: 80%; 
                 margin: 0 auto;
             }
@@ -218,6 +223,16 @@
             display: block; 
         }
 
+        #email {
+    text-align: center; 
+    font-size: 18px; 
+    color: #333; 
+    margin: 10px 0; 
+}
+
+
+        
+
     </style>
 </head>
 <body>
@@ -251,6 +266,7 @@
 
 <section id="contact" class="contact">
     <h2>Entre em contato</h2>
+    <h2 id="email"> Email : jbrmetal85@gmail.com</h2>
     <a href="https://api.whatsapp.com/send?phone=5519989824242&text=Olá! Vim pelo site e gostaria de fazer um orçamento" target="_blank">
         <button class="whatsapp-button">Fale conosco pelo WhatsApp</button>
     </a>
@@ -275,44 +291,46 @@
 
     function openLightbox(index) {
         currentIndex = index;
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImage = document.getElementById('lightboxImage');
-        lightboxImage.src = images[currentIndex];
-        lightbox.style.display = 'flex';
+        updateLightbox();
+        const lightbox = document.getElementById("lightbox");
+        lightbox.style.display = "flex";
     }
 
     function closeLightbox() {
-        document.getElementById('lightbox').style.display = 'none';
+        const lightbox = document.getElementById("lightbox");
+        lightbox.style.display = "none";
     }
 
-    function showImage(index) {
-        const lightboxImage = document.getElementById('lightboxImage');
-        lightboxImage.src = images[index];
+    function updateLightbox() {
+        const lightboxImage = document.getElementById("lightboxImage");
+        lightboxImage.src = images[currentIndex];
     }
 
-    document.getElementById('closeLightbox').onclick = closeLightbox;
-    document.getElementById('prev').onclick = function() {
+    document.getElementById("closeLightbox").onclick = closeLightbox;
+    document.getElementById("prevLightbox").onclick = () => {
         currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-        showImage(currentIndex);
+        updateLightbox();
     };
-    document.getElementById('next').onclick = function() {
+    document.getElementById("nextLightbox").onclick = () => {
         currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-        showImage(currentIndex);
-    };
-    document.getElementById('prevLightbox').onclick = function() {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-        showImage(currentIndex);
-    };
-    document.getElementById('nextLightbox').onclick = function() {
-        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-        showImage(currentIndex);
+        updateLightbox();
     };
 
-    window.onclick = function(event) {
-        if (event.target === document.getElementById('lightbox')) {
-            closeLightbox();
-        }
+    document.getElementById("prev").onclick = () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        updateGallery();
     };
+
+    document.getElementById("next").onclick = () => {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        updateGallery();
+    };
+
+    function updateGallery() {
+        const gallery = document.getElementById("galleryImages");
+        gallery.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
 </script>
+
 </body>
 </html>
