@@ -163,6 +163,86 @@
             }
         }
 
+        @media (min-width: 1024px) {
+    /* Estilos específicos para computadores */
+    body {
+        font-size: 18px; /* Ajuste o tamanho da fonte para computadores */
+    }
+
+    header {
+        padding: 30px; /* Aumente o padding no header */
+        font-size: 26px; /* Aumente o tamanho da fonte no header */
+    }
+
+    .about {
+        font-size: 18px; /* Aumente o tamanho do texto sobre nós em computadores */
+        width: 80%; /* Altere a largura da seção para computadores */
+        margin: 0 auto;
+    }
+
+    .gallery-container {
+        max-width: 1000px; /* Aumente o tamanho máximo da galeria em computadores */
+    }
+
+    .gallery img {
+        height: 300px; /* Aumente a altura das imagens da galeria em computadores */
+    }
+
+    .contact {
+        font-size: 20px; /* Aumente o tamanho da fonte na seção de contato */
+    }
+    /* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.lightbox .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.lightbox .left {
+    left: 10px;
+}
+
+.lightbox .right {
+    right: 10px;
+}
+
+}
+
+
     </style>
 </head>
 <body>
@@ -179,6 +259,14 @@
 <section id="about" class="about">
     <h2>Fundada em 2012, nossa empresa se especializou em serralheria, caldeiraria e montagem industrial, consolidando-se ao longo dos anos como referência no setor. Desde o início, temos buscado aprimorar nossas habilidades e conhecimentos, realizando diversos cursos de especialização no SENAI, focando em traçado de caldeiraria, mecânica e soldagem ao arco elétrico. Nossa jornada começou sob a orientação de nossos tios, empreendedores experientes na mesma área, onde adquirimos as bases fundamentais para nos tornarmos profissionais competentes. Com 12 anos de atuação no mercado, acumulamos uma vasta experiência, que inclui a montagem e desmontagem de usinas açucareiras, tanques de combustíveis e ácidos, além da criação de estruturas metálicas como coberturas, guarda-corpos, mezaninos e bases para reatores e tanques.</h2>
 </section>
+<!-- Lightbox Container -->
+<div id="lightbox" class="lightbox">
+    <span class="close" id="closeLightbox">&times;</span>
+    <img class="lightbox-content" id="lightboxImage">
+    <button class="arrow left" id="prevLightbox">&lt;</button>
+    <button class="arrow right" id="nextLightbox">&gt;</button>
+</div>
+
 
 <section id="gallery" class="gallery-container">
     <h2>Galeria de Produtos</h2>
@@ -224,6 +312,40 @@
         const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
         window.open(url, "_blank");
     };
+    // Função para abrir o lightbox ao clicar em uma imagem
+images.forEach((img, index) => {
+    img.onclick = function() {
+        currentIndex = index;
+        openLightbox();
+    };
+});
+
+function openLightbox() {
+    document.getElementById("lightbox").style.display = "flex";
+    updateLightbox();
+}
+
+function updateLightbox() {
+    const lightboxImage = document.getElementById("lightboxImage");
+    lightboxImage.src = images[currentIndex].src;
+}
+
+// Função para fechar o lightbox
+document.getElementById("closeLightbox").onclick = function() {
+    document.getElementById("lightbox").style.display = "none";
+};
+
+// Navegação entre as imagens no lightbox
+document.getElementById("nextLightbox").onclick = function() {
+    currentIndex = (currentIndex + 1) % totalImages;
+    updateLightbox();
+};
+
+document.getElementById("prevLightbox").onclick = function() {
+    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+    updateLightbox();
+};
+
 </script>
 
 </body>
