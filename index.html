@@ -164,99 +164,97 @@
         }
 
         @media (min-width: 1024px) {
-    /* Estilos específicos para computadores */
-    body {
-        font-size: 18px; /* Ajuste o tamanho da fonte para computadores */
-    }
+            /* Estilos específicos para computadores */
+            body {
+                font-size: 18px; /* Ajuste o tamanho da fonte para computadores */
+            }
 
-    header {
-        padding: 30px; /* Aumente o padding no header */
-        font-size: 26px; /* Aumente o tamanho da fonte no header */
-    }
+            header {
+                padding: 30px; /* Aumente o padding no header */
+                font-size: 26px; /* Aumente o tamanho da fonte no header */
+            }
 
-    .about {
-        font-size: 18px; /* Aumente o tamanho do texto sobre nós em computadores */
-        width: 80%; /* Altere a largura da seção para computadores */
-        margin: 0 auto;
-    }
+            .about {
+                font-size: 18px; /* Aumente o tamanho do texto sobre nós em computadores */
+                width: 80%; /* Altere a largura da seção para computadores */
+                margin: 0 auto;
+            }
 
-    .gallery-container {
-        max-width: 1000px; /* Aumente o tamanho máximo da galeria em computadores */
-    }
+            .gallery-container {
+                max-width: 1000px; /* Aumente o tamanho máximo da galeria em computadores */
+            }
 
-    .gallery img {
-        height: 300px; /* Aumente a altura das imagens da galeria em computadores */
-    }
+            .gallery img {
+                height: 300px; /* Aumente a altura das imagens da galeria em computadores */
+            }
 
-    .contact {
-        font-size: 20px; /* Aumente o tamanho da fonte na seção de contato */
-    }
-    /* Lightbox */
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-    padding: 20px; /* Adiciona espaço para as setas em telas pequenas */
-}
+            .contact {
+                font-size: 20px; /* Aumente o tamanho da fonte na seção de contato */
+            }
+        }
 
-.lightbox-content {
-    max-width: 90%;
-    max-height: 80vh; /* Limita a altura da imagem em 80% da altura da tela */
-    border-radius: 10px;
-    object-fit: contain; /* Garante que a imagem não estoure o tamanho da tela */
-}
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            padding: 20px; /* Adiciona espaço para as setas em telas pequenas */
+        }
 
-.lightbox .close {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-}
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 80vh; /* Limita a altura da imagem em 80% da altura da tela */
+            border-radius: 10px;
+            object-fit: contain; /* Garante que a imagem não estoure o tamanho da tela */
+        }
 
-.lightbox .arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-}
+        .lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+        }
 
-.lightbox .left {
-    left: 10px;
-}
+        .lightbox .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
 
-.lightbox .right {
-    right: 10px;
-}
+        .lightbox .left {
+            left: 10px;
+        }
 
-@media (max-width: 768px) {
-    /* Ajustes para dispositivos móveis */
-    .lightbox-content {
-        max-width: 100%;
-        max-height: 70vh; /* Ajusta para telas menores */
-    }
+        .lightbox .right {
+            right: 10px;
+        }
 
-    .arrow {
-        padding: 5px; /* Reduz o tamanho das setas em dispositivos menores */
-    }
-}
+        @media (max-width: 768px) {
+            /* Ajustes para dispositivos móveis */
+            .lightbox-content {
+                max-width: 100%;
+                max-height: 70vh; /* Ajusta para telas menores */
+            }
 
-}
-
-
+            .arrow {
+                padding: 5px; /* Reduz o tamanho das setas em dispositivos menores */
+            }
+        }
     </style>
 </head>
 <body>
@@ -273,108 +271,83 @@
 <section id="about" class="about">
     <h2>Fundada em 2012, nossa empresa se especializou em serralheria, caldeiraria e montagem industrial, consolidando-se ao longo dos anos como referência no setor. Desde o início, temos buscado aprimorar nossas habilidades e conhecimentos, realizando diversos cursos de especialização no SENAI, focando em traçado de caldeiraria, mecânica e soldagem ao arco elétrico. Nossa jornada começou sob a orientação de nossos tios, empreendedores experientes na mesma área, onde adquirimos as bases fundamentais para nos tornarmos profissionais competentes. Com 12 anos de atuação no mercado, acumulamos uma vasta experiência, que inclui a montagem e desmontagem de usinas açucareiras, tanques de combustíveis e ácidos, além da criação de estruturas metálicas como coberturas, guarda-corpos, mezaninos e bases para reatores e tanques.</h2>
 </section>
+
 <!-- Lightbox Container -->
 <div id="lightbox" class="lightbox">
     <span class="close" id="closeLightbox">&times;</span>
-    <img class="lightbox-content" id="lightboxImage">
+    <img class="lightbox-content" id="lightboxImage" alt="Imagem ampliada">
     <button class="arrow left" id="prevLightbox">&lt;</button>
     <button class="arrow right" id="nextLightbox">&gt;</button>
 </div>
 
-
 <section id="gallery" class="gallery-container">
     <h2>Galeria de Produtos</h2>
-    <div class="gallery">
-        <img src="foto1.jpeg" alt="Produto 1">
-        <img src="foto2.jpeg" alt="Produto 2">
-        <img src="foto3.jpeg" alt="Produto 3">
+    <div class="gallery" id="galleryImages">
+        <img src="foto1.jpg" alt="Produto 1" onclick="openLightbox(0)">
+        <img src="foto2.jpg" alt="Produto 2" onclick="openLightbox(1)">
+        <img src="foto3.jpg" alt="Produto 3" onclick="openLightbox(2)">
+        <img src="foto4.jpg" alt="Produto 4" onclick="openLightbox(3)">
     </div>
-    <button class="arrow left" id="prev">&lt;</button>
-    <button class="arrow right" id="next">&gt;</button>
+    <button class="arrow left" id="prev">←</button>
+    <button class="arrow right" id="next">→</button>
 </section>
 
 <section id="contact" class="contact">
-    <h2>Contato</h2>
-    <p>Telefone: (11) 99999-9999</p> 
-    <p>Email: contato@jbrmetais.com</p> 
-    <button class="whatsapp-button" id="whatsappButton">Solicite seu orçamento</button>
+    <h2>Entre em contato</h2>
+    <a href="https://api.whatsapp.com/send?phone=5511999999999" target="_blank">
+        <button class="whatsapp-button">Fale conosco pelo WhatsApp</button>
+    </a>
 </section>
 
 <script>
+    const images = [
+        "foto1.jpg",
+        "foto2.jpg",
+        "foto3.jpg",
+        "foto4.jpg"
+    ];
+
     let currentIndex = 0;
-    const images = document.querySelectorAll('.gallery img');
-    const totalImages = images.length;
 
-    document.getElementById("next").onclick = function() {
-        currentIndex = (currentIndex + 1) % totalImages;
-        updateGallery();
-    };
-
-    document.getElementById("prev").onclick = function() {
-        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-        updateGallery();
-    };
-
-    function updateGallery() {
-        const offset = -currentIndex * 100; 
-        document.querySelector('.gallery').style.transform = `translateX(${offset}%)`;
-    }
-
-    document.getElementById("whatsappButton").onclick = function() {
-        const mensagem = "Olá, vim pelo site e gostaria de fazer um orçamento";
-        const numero = "5519984507190"; 
-        const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-        window.open(url, "_blank");
-    };
-    // Função para abrir o lightbox ao clicar em uma imagem
-images.forEach((img, index) => {
-    img.onclick = function() {
+    function openLightbox(index) {
         currentIndex = index;
-        openLightbox();
-    };
-});
-
-function openLightbox() {
-    document.getElementById("lightbox").style.display = "flex";
-    updateLightbox();
-}
-
-// Função para atualizar o conteúdo do lightbox com a imagem atual
-function updateLightbox() {
-    const lightboxImage = document.getElementById("lightboxImage");
-    lightboxImage.src = images[currentIndex].src;
-}
-
-// Fechar o lightbox ao clicar no botão "fechar" ou fora da imagem
-document.getElementById("closeLightbox").onclick = function() {
-    closeLightbox();
-};
-
-document.getElementById("lightbox").onclick = function(e) {
-    if (e.target !== document.getElementById("lightboxImage") && 
-        e.target !== document.getElementById("prevLightbox") && 
-        e.target !== document.getElementById("nextLightbox")) {
-        closeLightbox();
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightboxImage");
+        lightboxImage.src = images[currentIndex];
+        lightbox.style.display = "flex"; // Muda para flex para centralizar a imagem
     }
-};
 
-function closeLightbox() {
-    document.getElementById("lightbox").style.display = "none";
-}
+    function closeLightbox() {
+        const lightbox = document.getElementById("lightbox");
+        lightbox.style.display = "none";
+    }
 
-// Navegação entre as imagens no lightbox
-document.getElementById("nextLightbox").onclick = function() {
-    currentIndex = (currentIndex + 1) % totalImages;
-    updateLightbox();
-};
+    function showImage(index) {
+        currentIndex = (index + images.length) % images.length; // Garante que o índice seja circular
+        const lightboxImage = document.getElementById("lightboxImage");
+        lightboxImage.src = images[currentIndex];
+    }
 
-document.getElementById("prevLightbox").onclick = function() {
-    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-    updateLightbox();
-};
+    document.getElementById("closeLightbox").addEventListener("click", closeLightbox);
+    document.getElementById("prevLightbox").addEventListener("click", () => showImage(currentIndex - 1));
+    document.getElementById("nextLightbox").addEventListener("click", () => showImage(currentIndex + 1));
 
+    // Adicionando evento de clique para a galeria
+    document.querySelectorAll('.gallery img').forEach((img, index) => {
+        img.addEventListener('click', () => openLightbox(index));
+    });
 
+    // Controle de navegação na galeria
+    let galleryIndex = 0;
+    document.getElementById("prev").addEventListener("click", () => {
+        galleryIndex = (galleryIndex - 1 + images.length) % images.length;
+        document.getElementById("galleryImages").style.transform = `translateX(-${galleryIndex * 100}%)`;
+    });
+
+    document.getElementById("next").addEventListener("click", () => {
+        galleryIndex = (galleryIndex + 1) % images.length;
+        document.getElementById("galleryImages").style.transform = `translateX(-${galleryIndex * 100}%)`;
+    });
 </script>
-
 </body>
 </html>
