@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="JBRMETALLOGO.png">
+    <!-- Adicionando o CSS do Slick -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+
+
 
 
     <title>JBR Metal</title>
@@ -241,6 +246,14 @@
     .lightbox .arrow {
         display: block; 
     }
+    .video-carousel {
+            max-width: 600px; /* Tamanho máximo do carrossel */
+            margin: 0 auto; /* Centraliza o carrossel */
+        }
+
+     .video-carousel video {
+            width: 100%; /* Faz o vídeo ocupar 100% da largura do slide */
+        }
     
 </style>    
 </head>
@@ -301,6 +314,64 @@
     <button class="arrow left" id="prev">←</button>
     <button class="arrow right" id="next">→</button>
 </section>
+<div class="video-carousel">
+    <div>
+      <video width="300" controls>
+        <source src="video1.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+      </video>
+    </div>
+    <div>
+      <video width="300" controls>
+        <source src="video2.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+      </video>
+    </div>
+    <div>
+      <video width="300" controls>
+        <source src="video3.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+      </video>      
+    </div>
+    <div>
+        <video width="300" controls>
+          <source src="video4.mp4" type="video/mp4">
+          Seu navegador não suporta o elemento de vídeo.
+        </video>      
+    </div>
+    <div>
+        <video width="300" controls>
+          <source src="video5.mp4" type="video/mp4">
+          Seu navegador não suporta o elemento de vídeo.
+        </video>      
+    </div>
+    <div>
+        <video width="300" controls>
+          <source src="video6.mp4" type="video/mp4">
+          Seu navegador não suporta o elemento de vídeo.
+        </video>      
+    </div>
+  </div>
+    <!-- Adicionando o jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Adicionando o JS do Slick -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <!-- Script para inicializar o Slick Carousel -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.video-carousel').slick({
+                dots: true, // Mostra os pontos de navegação
+                infinite: true, // Loop infinito
+                speed: 500, // Velocidade de transição
+                slidesToShow: 1, // Número de vídeos a mostrar
+                slidesToScroll: 1 // Número de vídeos a rolar
+            });
+        });
+    </script>
+  
+  
 <section id="contact" class="contact">
     <h2>Entre em contato</h2>
     <h2 id="email"> E-mail: jbrmetal85@gmail.com</h2>
@@ -424,6 +495,7 @@ function updateGallery() {
     const galleryWidth = gallery.offsetWidth; 
     gallery.style.transform = `translateX(-${currentIndex * galleryWidth}px)`; 
 }
+
 </script>
 </body>
 </html>
