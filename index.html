@@ -254,7 +254,7 @@
 </section>
 <section id="gallery" class="gallery-container">
     <h2>Galeria</h2>
-    <div class="gallery" id="galleryImages">
+    <div class="gallery" id="galleryImages" >
         <img src="foto1.jpeg" alt="Produto 1" onclick="openLightbox(0)">
         <img src="foto2.jpeg" alt="Produto 2" onclick="openLightbox(1)">
         <img src="foto3.jpeg" alt="Produto 3" onclick="openLightbox(2)">
@@ -376,11 +376,16 @@ document.getElementById("nextLightbox").onclick = () => {
     updateLightbox();
 };
 document.getElementById("next").onclick = () => {
-    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0; 
+    if (currentIndex > 12) {
+        currentIndex = 0; 
+    } else {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;  
+    }
     updateGallery();
 };
+
 document.getElementById("prev").onclick = () => {
-    currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;  
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 25;
     updateGallery();
 };
 function updateGallery() {
