@@ -5,19 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JBR Metais</title>
     <style>
-    /* Box sizing */
     * {
-        box-sizing: border-box; /* Inclui padding e borda na largura/altura total */
+        box-sizing: border-box; 
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
-    
     body {
         margin: 0; 
         padding: 0; 
         background-color: #7e7e7e;
         overflow-x: hidden; 
     }
-    
     header {
         background-color: #3b3535;
         color: white;
@@ -27,21 +24,17 @@
         width: 100%;
         transition: background-color 0.3s ease; 
     }
-    
     header img {
         height: 80px; 
         transition: transform 0.3s ease; 
     }
-    
     header:hover img {
         transform: scale(1.1); 
     }
-    
     nav {
         margin: 10px 0; 
         text-align: center; 
     }
-    
     nav a {
         color: rgb(255, 255, 255);
         margin: 0 15px;
@@ -49,7 +42,6 @@
         position: relative;
         overflow: hidden; 
     }
-    
     nav a::after {
         content: '';
         position: absolute;
@@ -60,12 +52,10 @@
         background-color: white;
         transition: width 0.3s ease, left 0.3s ease; 
     }
-    
     nav a:hover::after {
         width: 100%; 
         left: 0; 
     }
-    
     .gallery-container {
         position: relative;
         width: 100%;
@@ -76,14 +66,12 @@
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
         text-align: center;
     }
-    
     .gallery {
         display: flex;
         transition: transform 0.5s ease;
         width: 100%;
         
     }
-    
     .gallery img {
         width: 100%;
         object-fit: cover; 
@@ -92,11 +80,9 @@
         box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         transition: transform 0.3s ease; 
     }
-    
     .gallery img:hover {
         transform: scale(1.05); 
     }
-    
     .arrow {
         display: flex; 
         width: 40px; 
@@ -112,24 +98,20 @@
         transform: translateY(-50%); 
         transition: background-color 0.3s ease; 
     }
-    
     .arrow:hover {
         background-color: rgba(0, 0, 0, 0.7); 
     }
-    
     .arrow.left {
         left: 10px; 
     }
-    
     .arrow.right {
         right: 10px; 
-    }
-    
+    }    
     .contact {
         text-align: center;
         margin: 20px;
-    }
-    
+        
+    }    
     .whatsapp-button {
         background-color: #25D366;
         color: white;
@@ -141,12 +123,11 @@
         margin-top: 10px;
         transition: background-color 0.3s ease; 
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    
+        font-weight: bold;
+    }    
     .whatsapp-button:hover {
         background-color: #1DAE55;
-    }
-    
+    }    
     .about {
         position: relative;
         width: 100%;
@@ -157,57 +138,47 @@
         padding: 10px; 
         text-align: center; 
        
-    }
-    
+    }    
     .about h2 {
         margin: 20px 0; 
         text-align: center; 
         transition: color 0.3s ease; 
-    }
-        
+    }        
     #email {
         font-size: 18px; 
         margin: 10px 0; 
         color: #fff; 
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    
+        font-weight: normal;
+    }    
     @media (max-width: 768px) {
         header img {
             height: 50px;
-        }
-    
+        }    
         nav a {
             font-size: 14px;
-        }
-    
+        }    
         .whatsapp-button {
             padding: 10px 20px;
             font-size: 14px;
         }
-    }
-    
+    }    
     @media (max-width: 480px) {
         header img {
             height: 90px;
-        }
-    
+        }    
         .whatsapp-button {
             padding: 8px 16px;
             font-size: 12px;
-        }
-    
+        }    
         nav a {
             font-size: 12px;
             margin: 0 10px;
         }
-    }
-    
+    }    
     @media (min-width: 1024px) {
         body {
             font-size: 18px; 
-        }
-    
+        }    
         header {
             padding: 30px; 
             font-size: 26px; 
@@ -215,28 +186,22 @@
         header img{
             width: 400px;
             height: 150px   ;
-        }
-    
+        }    
         .about {
             font-size: 18px; 
             width: 80%; 
             margin: 0 auto;
-        }
-    
+        }    
         .gallery-container {
             max-width: 1000px; 
-        }
-    
+        }    
         .gallery img {
             height: 300px;
-        }
-    
+        }    
         .contact {
             font-size: 20px; 
-        }
-    }
-    
-    /* Lightbox */
+        }        
+    }       
     .lightbox {
         display: none;
         position: fixed;
@@ -248,15 +213,13 @@
         background-color: rgba(0, 0, 0, 0.8);
         justify-content: center;
         align-items: center;
-    }
-    
+    }    
     .lightbox-content {
         max-width: 90%;
         max-height: 80vh; 
         border-radius: 10px;
         object-fit: contain; 
-    }
-    
+    }    
     .lightbox .close {
         position: absolute;
         top: 20px;
@@ -264,31 +227,25 @@
         font-size: 40px;
         color: white;
         cursor: pointer;
-    }
-    
+    }    
     .lightbox .arrow {
         display: block; 
     }
 </style>    
-
 </head>
 <body>
-
 <header>
     <img src="JBRMETALLOGO.png" alt="Logo da JBR Metais">
 </header>
-
 <nav>
     <a href="#about">Sobre nós</a>
     <a href="#gallery">Galeria</a>
     <a href="#contact">Contato</a>
 </nav>
-
 <section id="about" class="about">
     <h2>Sobre nós</h2>
     <p>Fundada em 2012, nossa empresa se especializou em serralheria, caldeiraria e montagem industrial, consolidando-se ao longo dos anos como referência no setor. Desde o início, temos buscado aprimorar nossas habilidades e conhecimentos, realizando diversos cursos de especialização no SENAI, focando em traçado de caldeiraria, mecânica e soldagem ao arco elétrico. Nossa jornada começou sob a orientação de nossos tios, empreendedores experientes na mesma área, onde adquirimos as bases fundamentais para nos tornarmos profissionais competentes. Com 12 anos de atuação no mercado, acumulamos uma vasta experiência, que inclui a montagem e desmontagem de usinas açucareiras, tanques de combustíveis e ácidos, além da criação de estruturas metálicas como coberturas, guarda-corpos, mezaninos e bases para reatores e tanques.</p> 
 </section>
-
 <section id="gallery" class="gallery-container">
     <h2>Galeria</h2>
     <div class="gallery" id="galleryImages">
@@ -296,62 +253,57 @@
         <img src="foto2.jpeg" alt="Produto 2" onclick="openLightbox(1)">
         <img src="foto3.jpeg" alt="Produto 3" onclick="openLightbox(2)">
         <img src="foto4.jpeg" alt="Produto 4" onclick="openLightbox(3)">
-        <img src="foto5.jpeg" alt="Produto 4" onclick="openLightbox(4)">
-        <img src="foto6.jpeg" alt="Produto 4" onclick="openLightbox(5)">
-        <img src="foto7.jpeg" alt="Produto 4" onclick="openLightbox(6)">
-        <img src="foto8.jpeg" alt="Produto 4" onclick="openLightbox(7)">
-        <img src="foto9.jpeg" alt="Produto 4" onclick="openLightbox(8)">
-        <img src="foto10.jpeg" alt="Produto 4" onclick="openLightbox(9)">
-        <img src="foto11.jpeg" alt="Produto 4" onclick="openLightbox(10)">
-        <img src="foto12.jpeg" alt="Produto 4" onclick="openLightbox(11)">
-        <img src="foto13.jpeg" alt="Produto 4" onclick="openLightbox(12)">
-        <img src="foto14.jpeg" alt="Produto 4" onclick="openLightbox(13)">
-        <img src="foto15.jpeg" alt="Produto 4" onclick="openLightbox(14)">
-        <img src="foto16.jpeg" alt="Produto 4" onclick="openLightbox(15)">
-        <img src="foto17.jpeg" alt="Produto 4" onclick="openLightbox(16)">
-        <img src="foto18.jpeg" alt="Produto 4" onclick="openLightbox(17)">
-        <img src="foto19.jpeg" alt="Produto 4" onclick="openLightbox(18)">
-        <img src="foto20.jpeg" alt="Produto 4" onclick="openLightbox(19)">
-        <img src="foto21.jpeg" alt="Produto 4" onclick="openLightbox(20)">
-        <img src="foto22.jpeg" alt="Produto 4" onclick="openLightbox(21)">
-        <img src="foto23.jpeg" alt="Produto 4" onclick="openLightbox(22)">
-        <img src="foto24.jpeg" alt="Produto 4" onclick="openLightbox(23)">
-        <img src="foto25.jpeg" alt="Produto 4" onclick="openLightbox(24)">
-        <img src="foto26.jpeg" alt="Produto 4" onclick="openLightbox(25)">
-        <img src="foto27.jpeg" alt="Produto 4" onclick="openLightbox(26)">
-        <img src="foto28.jpeg" alt="Produto 4" onclick="openLightbox(27)">
-        <img src="foto29.jpeg" alt="Produto 4" onclick="openLightbox(28)">
-        <img src="foto30.jpeg" alt="Produto 4" onclick="openLightbox(29)">
-        <img src="foto31.jpeg" alt="Produto 4" onclick="openLightbox(30)">
-        <img src="foto32.jpeg" alt="Produto 4" onclick="openLightbox(31)">
-        <img src="foto33.jpeg" alt="Produto 4" onclick="openLightbox(32)">
-        <img src="foto34.jpeg" alt="Produto 4" onclick="openLightbox(33)">
-        <img src="foto35.jpeg" alt="Produto 4" onclick="openLightbox(34)">
-        <img src="foto36.jpeg" alt="Produto 4" onclick="openLightbox(35)">
-        <img src="foto37.jpeg" alt="Produto 4" onclick="openLightbox(36)">
-        <img src="foto38.jpeg" alt="Produto 4" onclick="openLightbox(37)">
-
-
+        <img src="foto5.jpeg" alt="Produto 5" onclick="openLightbox(4)">
+        <img src="foto6.jpeg" alt="Produto 6" onclick="openLightbox(5)">
+        <img src="foto7.jpeg" alt="Produto 7" onclick="openLightbox(6)">
+        <img src="foto8.jpeg" alt="Produto 8" onclick="openLightbox(7)">
+        <img src="foto9.jpeg" alt="Produto 9" onclick="openLightbox(8)">
+        <img src="foto10.jpeg" alt="Produto 10" onclick="openLightbox(9)">
+        <img src="foto11.jpeg" alt="Produto 11" onclick="openLightbox(10)">
+        <img src="foto12.jpeg" alt="Produto 12" onclick="openLightbox(11)">
+        <img src="foto13.jpeg" alt="Produto 13" onclick="openLightbox(12)">
+        <img src="foto14.jpeg" alt="Produto 14" onclick="openLightbox(13)">
+        <img src="foto15.jpeg" alt="Produto 15" onclick="openLightbox(14)">
+        <img src="foto16.jpeg" alt="Produto 16" onclick="openLightbox(15)">
+        <img src="foto17.jpeg" alt="Produto 17" onclick="openLightbox(16)">
+        <img src="foto18.jpeg" alt="Produto 18" onclick="openLightbox(17)">
+        <img src="foto19.jpeg" alt="Produto 19" onclick="openLightbox(18)">
+        <img src="foto20.jpeg" alt="Produto 20" onclick="openLightbox(19)">
+        <img src="foto21.jpeg" alt="Produto 21" onclick="openLightbox(20)">
+        <img src="foto22.jpeg" alt="Produto 22" onclick="openLightbox(21)">
+        <img src="foto23.jpeg" alt="Produto 23" onclick="openLightbox(22)">
+        <img src="foto24.jpeg" alt="Produto 24" onclick="openLightbox(23)">
+        <img src="foto25.jpeg" alt="Produto 25" onclick="openLightbox(24)">
+        <img src="foto26.jpeg" alt="Produto 26" onclick="openLightbox(25)">
+        <img src="foto27.jpeg" alt="Produto 27" onclick="openLightbox(26)">
+        <img src="foto28.jpeg" alt="Produto 28" onclick="openLightbox(27)">
+        <img src="foto29.jpeg" alt="Produto 29" onclick="openLightbox(28)">
+        <img src="foto30.jpeg" alt="Produto 30" onclick="openLightbox(29)">
+        <img src="foto31.jpeg" alt="Produto 31" onclick="openLightbox(30)">
+        <img src="foto32.jpeg" alt="Produto 32" onclick="openLightbox(31)">
+        <img src="foto33.jpeg" alt="Produto 33" onclick="openLightbox(32)">
+        <img src="foto34.jpeg" alt="Produto 34" onclick="openLightbox(33)">
+        <img src="foto35.jpeg" alt="Produto 35" onclick="openLightbox(34)">
+        <img src="foto36.jpeg" alt="Produto 36" onclick="openLightbox(35)">
+        <img src="foto37.jpeg" alt="Produto 37" onclick="openLightbox(36)">
+        <img src="foto38.jpeg" alt="Produto 38" onclick="openLightbox(37)">
     </div>
     <button class="arrow left" id="prev">←</button>
     <button class="arrow right" id="next">→</button>
 </section>
-
 <section id="contact" class="contact">
     <h2>Entre em contato</h2>
-    <h2 id="email"> Email : jbrmetal85@gmail.com</h2>
+    <h2 id="email"> E-mail: jbrmetal85@gmail.com</h2>
     <a href="https://api.whatsapp.com/send?phone=5519981791134&text=Olá! Vim pelo site e gostaria de fazer um orçamento" target="_blank">
         <button class="whatsapp-button">Fale conosco pelo WhatsApp</button>
     </a>
 </section>
-
 <div class="lightbox" id="lightbox">
     <span class="close" id="closeLightbox">&times;</span>
     <img id="lightboxImage" class="lightbox-content" src="" alt="Lightbox Image">
     <button class="arrow left" id="prevLightbox">←</button>
     <button class="arrow right" id="nextLightbox">→</button>
 </div>
-
 <script>
     const images = [
     "foto1.jpeg",
@@ -393,57 +345,43 @@
     "foto37.jpeg",
     "foto38.jpeg"
 ];
-
 let currentIndex = 0;
-
 function openLightbox(index) {
     currentIndex = index;
     updateLightbox();
     const lightbox = document.getElementById("lightbox");
     lightbox.style.display = "flex";
 }
-
 function closeLightbox() {
     const lightbox = document.getElementById("lightbox");
     lightbox.style.display = "none";
 }
-
 function updateLightbox() {
     const lightboxImage = document.getElementById("lightboxImage");
     lightboxImage.src = images[currentIndex];
 }
-
 document.getElementById("closeLightbox").onclick = closeLightbox;
-
 document.getElementById("prevLightbox").onclick = () => {
     currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
     updateLightbox();
 };
-
 document.getElementById("nextLightbox").onclick = () => {
     currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;  
     updateLightbox();
 };
-
-
 document.getElementById("next").onclick = () => {
     currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0; 
     updateGallery();
 };
-
 document.getElementById("prev").onclick = () => {
     currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;  
     updateGallery();
 };
-
 function updateGallery() {
     const gallery = document.getElementById("galleryImages");
     const galleryWidth = gallery.offsetWidth; 
     gallery.style.transform = `translateX(-${currentIndex * galleryWidth}px)`; 
 }
-
-
 </script>
-
 </body>
 </html>
