@@ -39,9 +39,6 @@
         height: 80px; 
         transition: transform 0.3s ease; 
     }
-    header:hover img {
-        transform: scale(1.1); 
-    }
     nav {
         margin: 10px 0; 
         text-align: center; 
@@ -67,6 +64,7 @@
     nav a:hover::after {
         width: 100%; 
         left: 0; 
+        
     }
     .gallery-container {
         position: relative;
@@ -129,7 +127,7 @@
         padding: 15px 30px;
         border-radius: 5px;
         cursor: pointer;
-        font-size: 16px;
+        font-size: 18px;
         margin-top: 10px;
         transition: background-color 0.3s ease; 
         font-weight: bold;
@@ -154,10 +152,10 @@
         transition: color 0.3s ease; 
     }        
     #email {
-        font-size: 18px; 
+        font-size: 22px; 
         margin: 10px 0; 
         color: black; /* Cor mais escura */
-        font-weight: normal;
+        font-weight: bold;
     }    
     @media (max-width: 768px) {
         header img {
@@ -217,13 +215,13 @@
             font-size: 20px; 
         }        
         .video-carousel {
-            max-width: 600px; /* Tamanho máximo do carrossel */
-            margin: 100px auto; /* Centraliza o carrossel */
+            max-width: 600px; 
+            margin: 100px auto; 
             height: 400px;
         }
 
      .video-carousel video {
-            width: 100%; /* Faz o vídeo ocupar 100% da largura do slide */
+            width: 100%; 
         }
     
     }       
@@ -384,7 +382,7 @@
             $('.video-carousel').slick({
                 dots: true, 
                 infinite: true, 
-                speed: 770, // Velocidade de transição
+                speed: 770, 
                 slidesToShow: 1, 
                 slidesToScroll: 1 
             });
@@ -393,8 +391,8 @@
   
   
 <section id="contact" class="contact">
-    <h2>Entre em contato</h2>
-    <h2 id="email"> E-mail: jbrmetal85@gmail.com</h2>
+    <h2> Solicite já seu orçamento pelo e-mail ou pelo whatsapp </h2>
+    <h2 id="email"> jbrmetal85@gmail.com</h2>
     <a href="https://api.whatsapp.com/send?phone=5519989824242&text=Olá! Vim pelo site e gostaria de fazer um orçamento" target="_blank">
         <button class="whatsapp-button">Fale conosco pelo WhatsApp</button>
     </a>
