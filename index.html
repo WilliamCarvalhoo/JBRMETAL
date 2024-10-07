@@ -216,6 +216,16 @@
         .contact {
             font-size: 20px; 
         }        
+        .video-carousel {
+            max-width: 600px; /* Tamanho máximo do carrossel */
+            margin: 100px auto; /* Centraliza o carrossel */
+            height: 400px;
+        }
+
+     .video-carousel video {
+            width: 100%; /* Faz o vídeo ocupar 100% da largura do slide */
+        }
+    
     }       
     .lightbox {
         display: none;
@@ -246,15 +256,7 @@
     .lightbox .arrow {
         display: block; 
     }
-    .video-carousel {
-            max-width: 600px; /* Tamanho máximo do carrossel */
-            margin: 0 auto; /* Centraliza o carrossel */
-        }
-
-     .video-carousel video {
-            width: 100%; /* Faz o vídeo ocupar 100% da largura do slide */
-        }
-    
+ 
 </style>    
 </head>
 <body>
@@ -278,7 +280,7 @@
         <img src="foto4.jpeg" alt="Produto 4" onclick="openLightbox(3)">
         <img src="foto5.jpeg" alt="Produto 5" onclick="openLightbox(4)">
         <img src="foto6.jpeg" alt="Produto 6" onclick="openLightbox(5)">
-        <img src="foto7.jpeg" alt="Produto 7" onclick="openLightbox(6)">
+        <img src="foto7.jpeg" alt="Produto 6" onclick="openLightbox(6)">
         <img src="foto8.jpeg" alt="Produto 8" onclick="openLightbox(7)">
         <img src="foto9.jpeg" alt="Produto 9" onclick="openLightbox(8)">
         <img src="foto10.jpeg" alt="Produto 10" onclick="openLightbox(9)">
@@ -310,6 +312,27 @@
         <img src="foto36.jpeg" alt="Produto 36" onclick="openLightbox(35)">
         <img src="foto37.jpeg" alt="Produto 37" onclick="openLightbox(36)">
         <img src="foto38.jpeg" alt="Produto 38" onclick="openLightbox(37)">
+        <img src="foto39.jpeg" alt="Produto 38" onclick="openLightbox(38)">
+        <img src="foto40.jpeg" alt="Produto 38" onclick="openLightbox(39)">
+        <img src="foto41.jpeg" alt="Produto 38" onclick="openLightbox(40)">
+        <img src="foto42.jpeg" alt="Produto 38" onclick="openLightbox(41)">
+        <img src="foto43.jpeg" alt="Produto 38" onclick="openLightbox(42)">
+        <img src="foto44.jpeg" alt="Produto 38" onclick="openLightbox(43)">
+        <img src="foto45.jpeg" alt="Produto 38" onclick="openLightbox(44)">
+        <img src="foto46.jpeg" alt="Produto 38" onclick="openLightbox(45)">
+        <img src="foto47.jpeg" alt="Produto 38" onclick="openLightbox(46)">
+        <img src="foto48.jpeg" alt="Produto 38" onclick="openLightbox(47)">
+        <img src="foto49.jpeg" alt="Produto 38" onclick="openLightbox(48)">
+        <img src="foto50.jpeg" alt="Produto 38" onclick="openLightbox(49)">
+        <img src="foto51.jpeg" alt="Produto 38" onclick="openLightbox(50)">
+        <img src="foto52.jpeg" alt="Produto 38" onclick="openLightbox(51)">
+        <img src="foto53.jpeg" alt="Produto 38" onclick="openLightbox(52)">
+        <img src="foto54.jpeg" alt="Produto 38" onclick="openLightbox(53)">
+        <img src="foto55.jpeg" alt="Produto 38" onclick="openLightbox(54)">
+        <img src="foto56.jpeg" alt="Produto 38" onclick="openLightbox(55)">
+        <img src="foto57.jpeg" alt="Produto 38" onclick="openLightbox(56)">
+        <img src="foto58.jpeg" alt="Produto 38" onclick="openLightbox(57)">
+
     </div>
     <button class="arrow left" id="prev">←</button>
     <button class="arrow right" id="next">→</button>
@@ -340,33 +363,30 @@
         </video>      
     </div>
     <div>
-        <video width="300" controls>
+        <video width="300" height="300" controls>
           <source src="video5.mp4" type="video/mp4">
           Seu navegador não suporta o elemento de vídeo.
         </video>      
     </div>
     <div>
-        <video width="300" controls>
+        <video width="300" height="300" controls>
           <source src="video6.mp4" type="video/mp4">
           Seu navegador não suporta o elemento de vídeo.
         </video>      
     </div>
   </div>
-    <!-- Adicionando o jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
-    <!-- Adicionando o JS do Slick -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-    <!-- Script para inicializar o Slick Carousel -->
     <script type="text/javascript">
         $(document).ready(function(){
             $('.video-carousel').slick({
-                dots: true, // Mostra os pontos de navegação
-                infinite: true, // Loop infinito
-                speed: 500, // Velocidade de transição
-                slidesToShow: 1, // Número de vídeos a mostrar
-                slidesToScroll: 1 // Número de vídeos a rolar
+                dots: true, 
+                infinite: true, 
+                speed: 770, // Velocidade de transição
+                slidesToShow: 1, 
+                slidesToScroll: 1 
             });
         });
     </script>
@@ -424,7 +444,28 @@
     "foto35.jpeg",
     "foto36.jpeg",
     "foto37.jpeg",
-    "foto38.jpeg"
+    "foto38.jpeg",
+    "foto39.jpeg",
+    "foto40.jpeg",
+    "foto41.jpeg",
+    "foto42.jpeg",
+    "foto43.jpeg",
+    "foto44.jpeg",
+    "foto45.jpeg",
+    "foto46.jpeg",
+    "foto47.jpeg",
+    "foto48.jpeg",
+    "foto49.jpeg",
+    "foto50.jpeg",
+    "foto51.jpeg",
+    "foto52.jpeg",
+    "foto53.jpeg",
+    "foto54.jpeg",
+    "foto55.jpeg",
+    "foto56.jpeg",
+    "foto57.jpeg",
+    "foto58.jpeg",
+
 ];
 let currentIndex = 0;
 function openLightbox(index) {
@@ -460,9 +501,9 @@ document.getElementById("next").onclick = () => {
 };
 function getNextLimit() {
     if (window.innerWidth > 1024) {
-        return 7; 
+        return 10; 
     }
-    return 12; 
+    return 18; 
 }
 document.getElementById("next").onclick = () => {
     if (currentIndex > getNextLimit()) {
@@ -478,9 +519,9 @@ document.getElementById("prev").onclick = () => {
 };
 function getPrevLimit() {
     if (window.innerWidth > 1024) {
-        return images.length - 30; 
+        return images.length - 47; 
     }
-    return images.length - 25; 
+    return images.length - 39; 
 }
 document.getElementById("prev").onclick = () => {
     if (currentIndex > 0) {
